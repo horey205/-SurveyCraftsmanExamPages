@@ -1,3 +1,7 @@
+// 로그인 체크
+if (sessionStorage.getItem('isLoggedIn') !== 'true') {
+    location.href = 'login.html';
+}
 
 let currentQuestions = [];
 let currentIndex = 0;

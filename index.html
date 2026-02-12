@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -37,8 +38,15 @@
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         h1 {
@@ -88,16 +96,21 @@
             display: block;
         }
 
-        .card.ji-jeok .icon { color: #f59e0b; }
-        .card.cheuk-ryang .icon { color: #10b981; }
+        .card.ji-jeok .icon {
+            color: #f59e0b;
+        }
 
+        .card.cheuk-ryang .icon {
+            color: #10b981;
+        }
     </style>
 </head>
+
 <body>
     <div class="container">
         <h1>기능사 기출문제 학습</h1>
         <p>학습하고자 하는 자격증을 선택해주세요.</p>
-        
+
         <div class="btn-group">
             <a href="quiz.html?type=지적기능사" class="card ji-jeok">
                 <span class="icon">🗺️</span>
@@ -109,5 +122,12 @@
             </a>
         </div>
     </div>
+    <script>
+        // 로그인 체크
+        if (sessionStorage.getItem('isLoggedIn') !== 'true') {
+            location.href = 'login.html';
+        }
+    </script>
 </body>
+
 </html>
