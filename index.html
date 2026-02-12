@@ -103,6 +103,37 @@
         .card.cheuk-ryang .icon {
             color: #10b981;
         }
+
+        .sub-btn-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .btn-sm {
+            padding: 0.6rem;
+            background: #f1f5f9;
+            border-radius: 0.75rem;
+            text-decoration: none;
+            color: var(--text-color);
+            font-size: 0.9rem;
+            font-weight: bold;
+            transition: all 0.2s;
+        }
+
+        .btn-sm:hover {
+            background: #e2e8f0;
+        }
+
+        .btn-sm.highlight {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .btn-sm.highlight:hover {
+            opacity: 0.9;
+        }
     </style>
 </head>
 
@@ -112,14 +143,22 @@
         <p>학습하고자 하는 자격증을 선택해주세요.</p>
 
         <div class="btn-group">
-            <a href="quiz.html?type=지적기능사" class="card ji-jeok">
+            <div class="card ji-jeok">
                 <span class="icon">🗺️</span>
                 <h2>지적기능사</h2>
-            </a>
-            <a href="quiz.html?type=측량기능사" class="card cheuk-ryang">
+                <div class="sub-btn-group">
+                    <a href="quiz.html?type=지적기능사&mode=study" class="btn-sm">전체 학습</a>
+                    <a href="quiz.html?type=지적기능사&mode=exam" class="btn-sm highlight">모의고사</a>
+                </div>
+            </div>
+            <div class="card cheuk-ryang">
                 <span class="icon">📐</span>
                 <h2>측량기능사</h2>
-            </a>
+                <div class="sub-btn-group">
+                    <a href="quiz.html?type=측량기능사&mode=study" class="btn-sm">전체 학습</a>
+                    <a href="quiz.html?type=측량기능사&mode=exam" class="btn-sm highlight">모의고사</a>
+                </div>
+            </div>
         </div>
     </div>
     <script>
