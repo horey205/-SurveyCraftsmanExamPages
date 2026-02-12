@@ -85,6 +85,17 @@ function renderQuestion() {
     });
     html += `</div>`;
 
+    // 해설 섹션 추가
+    if (isAnswered) {
+        const explanationText = q.explanation ? q.explanation.replace(/\n/g, '<br>') : '해설이 준비중입니다.';
+        html += `
+            <div class="explanation-box" style="margin-top: 1.5rem; padding: 1rem; background-color: rgba(16, 185, 129, 0.1); border: 1px solid #10b981; border-radius: 8px;">
+                <h4 style="color: #10b981; margin-bottom: 0.5rem;">💡 핵심 해설</h4>
+                <div class="exp-content" style="line-height: 1.6;">${explanationText}</div>
+            </div>
+        `;
+    }
+
     html += `
         <div class="nav-btns">
             <button onclick="prevQuestion()" ${currentIndex === 0 ? 'disabled' : ''}>이전</button>
